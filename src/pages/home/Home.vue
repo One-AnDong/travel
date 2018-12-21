@@ -1,11 +1,19 @@
 <template>
   <div>
-    <p>home</p>
+    <home-header></home-header>
+    <home-carrousel></home-carrousel>
   </div>
 </template>
 
 <script>
+import HomeHeader from './components/Header'
+import HomeCarrousel from './components/Carrousel'
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    HomeHeader,
+    HomeCarrousel
+  }
 }
 </script>
