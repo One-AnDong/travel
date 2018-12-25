@@ -11,7 +11,7 @@
              :key="item.id">
           <div class="icons__item__img">
             <img class="icons__item__img-content"
-                 :src="item.url">
+                 :src="item.imgUrl">
           </div>
           <p class="icons__desc">{{ item.desc }}</p>
         </div>
@@ -29,20 +29,14 @@
 </template>
 <script>
 export default {
+  name: 'icons',
+  props: {
+    icons: {
+      type: Array
+    }
+  },
   data () {
     return {
-      iconsImg: [
-        { id: 1, url: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png', desc: '景点门票' },
-        { id: 2, url: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png', desc: '广州必游' },
-        { id: 3, url: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png', desc: '动植物园' },
-        { id: 4, url: 'http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png', desc: '游乐场' },
-        { id: 5, url: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png', desc: '珠江夜游' },
-        { id: 6, url: 'http://img1.qunarzz.com/piao/fusion/1803/ab/6f7d6e44963c9302.png', desc: '泡温泉' },
-        { id: 7, url: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png', desc: '一日游' },
-        { id: 8, url: 'http://img1.qunarzz.com/piao/fusion/1811/f6/e54fad3ea337b02.gif', desc: '年终大促' },
-        { id: 9, url: 'http://img1.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png', desc: '玩转长隆' },
-        { id: 10, url: 'http://img1.qunarzz.com/piao/fusion/1803/80/416c6ab3368d1f02.png', desc: '全部玩乐' }
-      ],
       swiperOption: {
         pagination: {
           el: '.swiper-pagination'
@@ -53,7 +47,7 @@ export default {
   computed: {
     pages () {
       const pages = []
-      this.iconsImg.forEach((item, index) => {
+      this.icons.forEach((item, index) => {
         let page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

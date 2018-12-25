@@ -1,11 +1,12 @@
 <template>
   <div class="carrousel">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption"
+            v-if="showSwiper">
       <!-- slides -->
-      <swiper-slide v-for="item of swiperImg"
+      <swiper-slide v-for="item of swiperData"
                     :key="item.id">
         <img class="carrousel__img"
-             :src="item.url">
+             :src="item.imgUrl">
       </swiper-slide>
       <!-- Optional controls -->
       <div class="swiper-pagination"
@@ -17,6 +18,11 @@
 <script>
 export default {
   name: 'carrousel',
+  props: {
+    swiperData: {
+      type: Array
+    }
+  },
   data () {
     return {
       swiperOption: {
@@ -25,18 +31,12 @@ export default {
         },
         loop: true,
         autoplay: true
-      },
-      swiperImg: [
-        { id: 1, url: 'http://img1.qunarzz.com/piao/fusion/1812/d4/d51b0de13bdaeb02.jpg_750x200_a16ebfe3.jpg' },
-        { id: 2, url: 'http://img1.qunarzz.com/piao/fusion/1812/d6/daa880b254940402.jpg_750x200_b114308a.jpg' },
-        { id: 3, url: 'http://img1.qunarzz.com/piao/fusion/1811/b7/1e9c4ca462741f02.jpg_750x200_842d5261.jpg' }
-      ]
-
+      }
     }
   },
   computed: {
-    swiper () {
-      return this.$refs.mySwiper.swiper
+    showSwiper () {
+      return this.swiperData.length
     }
   }
 }

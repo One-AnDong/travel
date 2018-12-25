@@ -15,7 +15,7 @@
     <!-- /头部搜索模块 -->
 
     <div class="header__position">
-      <span>城市</span>
+      <span>{{ citiy }}</span>
       <font-awesome-icon :icon="['fas','caret-down']"
                          size='lg' />
     </div>
@@ -27,7 +27,12 @@
 </template>
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  props: {
+    citiy: {
+      type: String
+    }
+  }
 }
 </script>
 <style lang="stylus" scoped>
