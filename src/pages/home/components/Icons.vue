@@ -75,39 +75,40 @@ export default {
   width: 100%
   height: 0
   padding-bottom: 58%
-  border-bottom: 1px solid #eee
 .icons >>> .swiper-pagination-bullet-active
   background: $bgColor
 /* 图标模块
 ------------------------------------------------ */
-.icons__item
-  position: relative
-  float: left
-  overflow: hidden
-  width: 25%
-  height: 0
-  padding-bottom: 25%
-  .icons__item__img
+.icons
+  padding-top: 0.2rem
+  .icons__item
+    position: relative
+    float: left
+    overflow: hidden
+    width: 25%
+    height: 0
+    padding-bottom: 25%
+    .icons__item__img
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0.44rem
+      box-sizing: border-box
+      padding: 0.1rem
+      .icons__item__img-content
+        display: block
+        height: 100%
+        margin: 0 auto
+  /* 描述 */
+  .icons__desc
     position: absolute
-    top: 0
     left: 0
     right: 0
-    bottom: 0.44rem
-    box-sizing: border-box
-    padding: 0.1rem
-    .icons__item__img-content
-      display: block
-      height: 100%
-      margin: 0 auto
-/* 描述 */
-.icons__desc
-  position: absolute
-  left: 0
-  right: 0
-  bottom: 0
-  height: 0.44rem
-  line-height: 0.44rem
-  text-align: center
-  color: $darkTextColor
-  ellipsis()
+    bottom: 0
+    height: 0.44rem
+    line-height: 0.44rem
+    text-align: center
+    color: $darkTextColor
+    ellipsis()
 </style>

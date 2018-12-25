@@ -15,7 +15,7 @@
     <!-- /头部搜索模块 -->
 
     <div class="header__position">
-      <span>三亚</span>
+      <span>城市</span>
       <font-awesome-icon :icon="['fas','caret-down']"
                          size='lg' />
     </div>
