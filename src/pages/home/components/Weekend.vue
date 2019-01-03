@@ -10,7 +10,7 @@
     <div class="list"
          v-for="item in weekend"
          :key="item.id">
-      <div class="list__item">
+      <div class="list__item border-bottom">
         <div class="list__product">
           <img :src="item.imgUrl"
                class="list__product-img">
@@ -52,8 +52,6 @@ export default {
 --------------------------------------------------- */
 .list
   .list__item
-    border-bottom: 1px solid #eaeaea
-    box-sizing: border-box
     .list__product
       .list__product-img
         width: 100%
