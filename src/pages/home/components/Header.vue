@@ -13,12 +13,15 @@
       输入城市/景点/游玩主题
     </div>
     <!-- /头部搜索模块 -->
+    <router-link class="link"
+                 to="/citiy">
+      <div class="header__position">
+        <span>{{ citiy }}</span>
+        <font-awesome-icon :icon="['fas','caret-down']"
+                           size='lg' />
+      </div>
+    </router-link>
 
-    <div class="header__position">
-      <span>{{ citiy }}</span>
-      <font-awesome-icon :icon="['fas','caret-down']"
-                         size='lg' />
-    </div>
     <!-- /定位地址显示模块 -->
 
   </div>
@@ -65,4 +68,8 @@ export default {
   .header__position
     width: 1.24rem
     text-align: center
+/* common
+------------------------------------------------------ */
+.link
+  color: #fff
 </style>
