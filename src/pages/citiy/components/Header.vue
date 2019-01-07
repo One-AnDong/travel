@@ -1,10 +1,12 @@
 <template>
   <!-- S 头部模块 -->
   <div class="header">
-    <div class="header__back">
+    <router-link class="header__back"
+                 tag="div"
+                 to="/">
       <font-awesome-icon :icon="['fas','chevron-left']"
                          size='lg' />
-    </div>
+    </router-link>
     <!-- /头部返回模块 -->
 
     <h1 class="header__titile">

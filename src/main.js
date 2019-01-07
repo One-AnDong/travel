@@ -6,6 +6,7 @@ import router from './router'
 import fastClick from 'fastclick'
 import 'styles/reset.css'
 import 'styles/border.css'
+import store from './store'
 // 增加fortAwesom
 import {
   library
@@ -44,6 +45,7 @@ fastClick.attach(document.body)
 new Vue({
   el: '#app',
   router,
+  store,
   components: {
     App
   },
