@@ -16,7 +16,7 @@
     <router-link class="link"
                  to="/citiy">
       <div class="header__position">
-        <span>{{ citiy }}</span>
+        <span>{{ this.$store.state.citiy }}</span>
         <font-awesome-icon :icon="['fas','caret-down']"
                            size='lg' />
       </div>
@@ -30,12 +30,7 @@
 </template>
 <script>
 export default {
-  name: 'Header',
-  props: {
-    citiy: {
-      type: String
-    }
-  }
+  name: 'Header'
 }
 </script>
 <style lang="stylus" scoped>
@@ -66,7 +61,7 @@ export default {
     color: #ccc
     background: #fff
   .header__position
-    width: 1.24rem
+    padding: 0 0.1rem
     text-align: center
 /* common
 ------------------------------------------------------ */

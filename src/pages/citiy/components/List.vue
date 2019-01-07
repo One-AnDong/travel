@@ -9,7 +9,7 @@
         <div class="area__content">
           <div class="wrap">
             <div class="area__content-btn">
-              广州
+              {{ this.$store.state.citiy }}
             </div>
           </div>
         </div>
@@ -24,7 +24,8 @@
           <div class="wrap"
                v-for="item in hot"
                :key="item.id">
-            <div class="area__content-btn">
+            <div class="area__content-btn"
+                 @click="handleCitiyClick(item.name)">
               {{ item.name }}
             </div>
           </div>
@@ -42,7 +43,8 @@
         <div class="area__list">
           <div v-for="itemVal in item"
                :key="itemVal.id"
-               class="area__list__item border-bottom">
+               class="area__list__item border-bottom"
+               @click="handleCitiyClick(itemVal.name)">
             {{ itemVal.name}}
           </div>
         </div>
@@ -61,13 +63,19 @@ export default {
     cities: Object,
     change: String
   },
-  mounted () {
-    this.scroll = new BScroll(this.$refs.list)
+  methods: {
+    handleCitiyClick (val) {
+      this.$store.commit('changeCitiy', val)
+      this.$router.push('/')
+    }
   },
   watch: {
     change () {
       this.scroll.scrollToElement(this.$refs[this.change][0])
     }
+  },
+  mounted () {
+    this.scroll = new BScroll(this.$refs.list)
   }
 }
 </script>
