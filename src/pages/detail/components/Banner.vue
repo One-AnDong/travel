@@ -13,17 +13,22 @@
         <span>13</span>
       </div>
     </div>
-    <common-gallery v-show="showGallery"
-                    @close="handleCloseClick"></common-gallery>
+    <fade-animation>
+      <common-gallery v-show="showGallery"
+                      @close="handleCloseClick"></common-gallery>
+    </fade-animation>
+
   </div>
 </template>
 
 <script>
 import CommonGallery from 'common/gallery/Gallery'
+import FadeAnimation from 'common/fade/FadeAnimation'
 export default {
   name: 'Banner',
   components: {
-    CommonGallery
+    CommonGallery,
+    FadeAnimation
   },
   methods: {
     handleShowClick () {
