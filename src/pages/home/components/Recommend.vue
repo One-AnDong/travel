@@ -21,7 +21,9 @@
         <div class="list__desc">
           <p class="list__desc-title">{{ item.title }}</p>
           <p class="list__desc-sub">{{ item.desc }}</p>
-          <button class="list__desc-btn">查看详情</button>
+          <router-link tag="button"
+                       :to="/detail/+item.id"
+                       class="list__desc-btn">查看详情</router-link>
         </div>
       </div>
     </div>
