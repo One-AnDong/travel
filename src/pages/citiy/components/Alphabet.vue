@@ -4,7 +4,7 @@
       <li class="alphabet__list-item"
           :ref="item"
           @click="handleLetterClick"
-          @touchstart="handleTouchStart"
+          @touchstart.prevent="handleTouchStart"
           @touchmove="handleTouchMove"
           @touchend="handleTouchEnd"
           v-for="item in letter"

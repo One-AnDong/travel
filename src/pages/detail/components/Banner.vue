@@ -1,23 +1,23 @@
 <template>
   <div class="banner">
     <img class="banner__img"
-         src="http://img1.qunarzz.com/sight/p0/1505/be/be4802e10f3b3107.water.jpg_600x330_9eb9410c.jpg"
+         :src="bannerImg"
          @click="handleShowClick">
     <div class="banner__info">
       <div class="banner__info-title">
-        武隆天坑地缝国家地质公园(AAAA景区)
+        {{ this.sightName }}
       </div>
       <div class="banner__info-count">
         <font-awesome-icon :icon="['fas','image']"
                            size='1x' />
-        <span>13</span>
+        <span>{{ galleryImgs.length }}</span>
       </div>
     </div>
     <fade-animation>
       <common-gallery v-show="showGallery"
-                      @close="handleCloseClick"></common-gallery>
+                      @close="handleCloseClick"
+                      :imgs="galleryImgs"></common-gallery>
     </fade-animation>
-
   </div>
 </template>
 
@@ -26,6 +26,12 @@ import CommonGallery from 'common/gallery/Gallery'
 import FadeAnimation from 'common/fade/FadeAnimation'
 export default {
   name: 'Banner',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    galleryImgs: Array
+
+  },
   components: {
     CommonGallery,
     FadeAnimation

@@ -6,11 +6,11 @@
       <div class="list__item__title border-bottom">
         <div class="list__item-icon">
         </div>
-        {{ item.name }}
+        {{ item.title }}
       </div>
       <div class="child"
-           v-if="item.child">
-        <list :list="item.child"></list>
+           v-if="item.children">
+        <list :list="item.children"></list>
       </div>
     </div>
   </div>

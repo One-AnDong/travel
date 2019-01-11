@@ -1,6 +1,8 @@
 <template>
   <div class="detail">
-    <detail-banner></detail-banner>
+    <detail-banner :sightName="sightName"
+                   :bannerImg="bannerImg"
+                   :galleryImgs="galleryImgs"></detail-banner>
     <detail-header></detail-header>
     <div class="content">
       <detail-list :list="list"></detail-list>
@@ -12,27 +14,47 @@
 import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
 import DetailList from './components/List'
+import axios from 'axios'
 export default {
   name: 'Detail',
   data () {
     return {
-      list: [
-        { name: '成人票', child: [{ name: '成人三馆联票', child: [{ name: '广州博物馆' }] }, { name: '成人三景联票', child: [{ name: '越秀公园' }] }] },
-        { name: '学生票' },
-        { name: '儿童票' },
-        { name: '特惠票' }
-      ]
+      list: [],
+      galleryImgs: [],
+      sightName: '',
+      bannerImg: ''
+    }
+  },
+  methods: {
+    getInfo () {
+      axios.get('/api/detail.json', {
+        params: {
+          id: this.$route.params.id
+        }
+      }).then(this.getInfoSucc)
+    },
+    getInfoSucc (res) {
+      res = res.data
+      if (res.ret && res.data) {
+        this.list = res.data.categoryList
+        this.galleryImgs = res.data.galleryImgs
+        this.sightName = res.data.sightName
+        this.bannerImg = res.data.bannerImg
+      }
     }
   },
   components: {
     DetailBanner,
     DetailHeader,
     DetailList
+  },
+  mounted () {
+    this.getInfo()
   }
 }
 </script>
 
 <style lang="stylus" scoped>
 .content
-  height: 15rem
+  height: 50rem
 </style>

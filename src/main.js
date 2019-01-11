@@ -7,6 +7,7 @@ import fastClick from 'fastclick'
 import 'styles/reset.css'
 import 'styles/border.css'
 import store from './store'
+import 'babel-polyfill'
 // 增加fortAwesom
 import {
   library
