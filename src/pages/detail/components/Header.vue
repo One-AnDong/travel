@@ -53,7 +53,6 @@ export default {
       } else {
         this.showFixed = false
       }
-      console.log(top)
     }
   },
   created () {

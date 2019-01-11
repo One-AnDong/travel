@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     handleGetInfo () {
-      axios.get('https://www.easy-mock.com/mock/5c3836f8422c0541bcaa47e2/travel/citiy').then(this.handleGetInfoSucc)
+      axios.get('/api/citiy.json').then(this.handleGetInfoSucc)
     },
     handleGetInfoSucc (res) {
       res = res.data
