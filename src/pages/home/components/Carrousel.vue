@@ -1,4 +1,5 @@
 <template>
+  <!-- S 首页轮播模块 -->
   <div class="carrousel">
     <swiper :options="swiperOption"
             v-if="showSwiper">
@@ -13,6 +14,7 @@
            slot="pagination"></div>
     </swiper>
   </div>
+  <!-- E 首页轮播模块 -->
 </template>
 
 <script>

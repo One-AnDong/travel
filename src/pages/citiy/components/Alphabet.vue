@@ -1,4 +1,5 @@
 <template>
+  <!-- S 城市页面右侧字母栏模块 -->
   <div class="alphabet">
     <ul class="alphabet__list">
       <li class="alphabet__list-item"
@@ -11,6 +12,8 @@
           :key="item">{{ item }}</li>
     </ul>
   </div>
+  <!-- E 城市页面右侧字母栏模块 -->
+
 </template>
 
 <script>
@@ -57,6 +60,7 @@ export default {
     }
   },
   computed: {
+    // 通过计算属性提取出字母数组
     letter () {
       const letters = []
       for (let i in this.cities) {

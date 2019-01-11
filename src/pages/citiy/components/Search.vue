@@ -1,4 +1,5 @@
 <template>
+  <!-- S 城市页面头部模块 -->
   <div>
     <div class="search">
       <input class="search-input"
@@ -6,6 +7,8 @@
              placeholder="输入城市名或拼音"
              v-model="keyword">
     </div>
+    <!-- /搜索框模块 -->
+
     <div class="content"
          ref="list"
          v-show="keyword">
@@ -17,8 +20,9 @@
             v-show="hasList">没有找到匹配城市</li>
       </ul>
     </div>
+    <!-- /搜索结果模块 -->
   </div>
-
+  <!-- E 城市页面头部模块 -->
 </template>
 
 <script>
@@ -39,8 +43,8 @@ export default {
     getCitiy () {
       for (let i in this.cities) {
         this.cities[i].forEach((val) => {
-          if (val.name.indexOf(this.keyword) > -1 || val.spell.indexOf(this.keyword) > -1) {
-            this.resultData.push(val)
+          if (val.name.indexOf(this.keyword) > -1 || val.spell.indexOf(this.keyword) > -1) { // 判断输入的字符是否存在
+            this.resultData.push(val) // 将符合条件的值加入数组末端
           }
         })
       }
@@ -68,6 +72,8 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/variables.styl'
 
+/* 搜索框模块
+----------------------------------------- */
 .search
   height: 0.72rem
   padding: 0 0.1rem
@@ -81,6 +87,8 @@ export default {
     line-height: 0.62rem
     text-align: center
     color: #666
+/* 搜索结果模块
+----------------------------------------- */
 .content
   position: absolute
   overflow: hidden

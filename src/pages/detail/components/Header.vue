@@ -1,5 +1,5 @@
 <template>
-  <!-- S 头部模块 -->
+  <!-- S 旅游详情页头部模块 -->
   <div class="header">
     <router-link class="btn"
                  to="/"
@@ -26,7 +26,7 @@
     </div>
 
   </div>
-  <!-- E 头部模块 -->
+  <!-- E 旅游详情页头部模块 -->
 
 </template>
 <script>

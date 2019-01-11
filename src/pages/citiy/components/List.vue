@@ -1,4 +1,5 @@
 <template>
+  <!-- S 城市页面列表模块 -->
   <div class="list"
        ref="list">
     <div>
@@ -49,9 +50,11 @@
           </div>
         </div>
       </div>
-      <!-- /城市列表模块 -->
+      <!-- /所有城市模块 -->
     </div>
   </div>
+  <!-- E 城市页面列表模块 -->
+
 </template>
 
 <script>

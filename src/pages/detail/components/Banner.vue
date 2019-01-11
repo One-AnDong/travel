@@ -1,8 +1,12 @@
 <template>
+  <!-- S 旅游详情页banner模块 -->
   <div class="banner">
+
     <img class="banner__img"
          :src="bannerImg"
          @click="handleShowClick">
+    <!-- /banner图 -->
+
     <div class="banner__info">
       <div class="banner__info-title">
         {{ this.sightName }}
@@ -13,12 +17,18 @@
         <span>{{ galleryImgs.length }}</span>
       </div>
     </div>
+    <!-- /banner信息模块 -->
+
     <fade-animation>
       <common-gallery v-show="showGallery"
                       @close="handleCloseClick"
                       :imgs="galleryImgs"></common-gallery>
     </fade-animation>
+    <!-- /相册模块 -->
+
   </div>
+  <!-- E 旅游详情页banner模块 -->
+
 </template>
 
 <script>

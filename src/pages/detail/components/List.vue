@@ -1,19 +1,27 @@
 <template>
+
+  <!-- S 旅游详情页产品模块 -->
   <div class="list">
     <div class="list__item "
          v-for="(item,index) in list"
          :key="index">
+
       <div class="list__item__title border-bottom">
         <div class="list__item-icon">
         </div>
         {{ item.title }}
       </div>
+      <!-- /产品列表模块 -->
+
       <div class="child"
            v-if="item.children">
         <list :list="item.children"></list>
       </div>
+      <!-- /产品列表递归组件子模块 -->
+
     </div>
   </div>
+  <!-- E  旅游详情页产品模块  -->
 </template>
 
 <script>
