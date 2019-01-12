@@ -34,6 +34,11 @@ npm run dev
 
 <img src="https://github.com/One-AnDong/travel/blob/master/src/assets/img/1547283804.png" width="250" height="250"/>
 
+# 目标功能
+- [x] 选择城市 -- 完成
+- [x] 搜索地址 -- 完成
+- [x] 城市列表拖动 -- 完 
+
 # 总结
 
 
