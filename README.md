@@ -33,6 +33,7 @@ npm run dev
 ### 移动端扫描下方二维码
 
 <img src="https://github.com/One-AnDong/travel/blob/master/src/assets/img/1547283804.png" width="250" height="250"/>
+
 # 总结
 
 
