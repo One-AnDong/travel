@@ -27,7 +27,7 @@ npm run dev
 ```
 
 # 效果演示
-
+<img src="https://github.com/One-AnDong/travel/blob/master/src/assets/img/travel.gif"/>
 [查看demo请戳这里](https://one-andong.github.io/travel-build/#/)（请用chrome手机模式预览）
 
 ### 移动端扫描下方二维码
@@ -40,6 +40,9 @@ npm run dev
 - [x] 城市列表拖动 -- 完 
 
 # 开发总结
-##首页
+##项目结构搭建
+使用vue-cli初始化一个新webpack标准的项目
 
+##首页
+.header
 
