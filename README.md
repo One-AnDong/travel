@@ -32,7 +32,9 @@ npm run dev
 ### 移动端扫描下方二维码
 
 <img src="http://pic.mysir.me/1547283804.png" width="250" height="250"/>
+
 # 目标功能
+
 - [x] 选择城市 -- 完成
 - [x] 搜索地址 -- 完成
 - [x] 城市列表拖动 -- 完成
@@ -99,7 +101,7 @@ state是保存我们的数据的地方，显示state数据我们直接通过在�
 
 ### 引入awesome iconfont
 ## 首页
-#目录结构
+# 目录结构
 ```
 .
 ├── build
