@@ -4,7 +4,7 @@
 这是个小demo，一共有三个页面，基本覆盖了vue的基础知识，使用vue自带的脚手架工具vue-cli来构建项目结构，项目中使用了vuex来管理公共数据，使用vue-router实现路由功能，布局上使用rem加百分比的方式实现移动端适配。
 
 
-采用border.css解决高倍屏1px问题引入fastclick解决移动端点击300ms延迟等，从项目架构的搭建再到界面布局和组件的拆分和组件之间的互相通信，最后完成联调、真机测试、打包上线等步骤。
+采用border.css解决高倍屏1px问题引入fastclick解决移动端点击300ms延迟等，从项目架构的搭建再到界面布局和组件的拆分和组件之间的互相通信，最后完成联调、真机测试、打包上线等步骤。
 
 
 下文会详细总结整个开发过程，写这个的目的主要是对自己学习的一个总结和分享，可能知识点会偏基础入门，我会尽量写的比较有营养，希望我的分享对你有所帮助。
@@ -49,6 +49,7 @@ cd travel //进入项目文件夹
 yarn start //安装项目所需要的依赖
 yarn run dev //运行package.json中的脚本dev指令
 ```
+### 移动端适配
 
 ### 引入vuex
 首先我们在项目目录下安装好vuex，我们在开发和生产环境都是需要vuex的，所以我们是要做一个--save的安装，具体可以查看package.json,denpendencies对象放的是项目运行所需要的依赖，不管是生产还是开发，devDependencies对象中的是开发环境所需要的依赖，例如我们webpack打包需要的各类loader。
@@ -59,7 +60,7 @@ yarn add vuex //yarn 默认是--save安装
 
 在src目录下新建一个文件夹，一般取名为store(仓库的意思)，在该目录下新建一个名为index的js文件，在index.js里我们需要引入vue和vuex，同时使用vuex新建一个实例并开放出来，最后我们把index.js注册到vue的实例属性中，在我们项目中我们需要方便的在各个组件中都能调用我们的vuex，这时候我们不必一个一个引入，只需要在main.js中注册，这样各个组件就能够调用了，具体代码如下。
 
-src/store/index.js
+`src/store/index.js`
 
 ```javascript
 import Vue from 'vue' //引入vue
@@ -76,7 +77,7 @@ export default new Vuex.Store({
   mutations
 })
 ```
-src/main.js
+`src/main.js`
 
 ```javascript
 import Vue from 'vue'
@@ -156,4 +157,7 @@ state是保存我们的数据的地方，显示state数据我们直接通过在�
 ├── yarn-error.log
 └── yarn.lock
 ```
+
+test git
+
 
